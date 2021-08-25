@@ -129,10 +129,9 @@ export default function Home() {
           )}
         </ul>
         {kids.length > 0 && (
-          // <Link href="/print-labels" prefetch={false}>
-          //   <a className="btn btn-green create-labels">Create Labels</a>
-          // </Link>
-          <a href="/print-labels" className="btn btn-green create-labels">Create Labels</a>
+          <Link href="/print-labels">
+            <a className="btn btn-green create-labels">Create Labels</a>
+          </Link>
         )}
       </section>
     </>
