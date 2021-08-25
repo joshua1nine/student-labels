@@ -9,9 +9,17 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "compressorjs": "^1.0.7",
+    "fitty": "^2.3.5",
     "next": "11.1.0",
     "react": "17.0.2",
-    "react-dom": "17.0.2"
+    "react-dom": "17.0.2",
+    "react-icons": "^4.2.0",
+    "react-image-file-resizer": "^0.4.7",
+    "react-textfit": "^1.1.1",
+    "sass": "^1.37.5",
+    "use-fit-text": "^2.4.0",
+    "uuid": "^8.3.2"
   },
   "devDependencies": {
     "eslint": "7.32.0",
