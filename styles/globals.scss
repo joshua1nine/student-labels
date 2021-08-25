@@ -25,6 +25,7 @@ img {
 h1 {
   font-size: 42px;
   margin: 0 0 16px 0;
+  text-transform: uppercase;
 }
 
 h2 {
@@ -44,10 +45,6 @@ h2 {
   width: 100%;
   flex-direction: column;
   align-items: center;
-
-  // @media print {
-  //   visibility: visible;
-  // }
 }
 
 .locker-card {
@@ -218,6 +215,7 @@ svg {
 
 .file-upload__label {
   max-width: 250px;
+  margin-left: 6px;
   font-size: 14px;
   text-overflow: ellipsis;
   overflow: hidden;
@@ -230,8 +228,7 @@ svg {
   border: 2px solid #3D82C1;
   border-radius: 5px;
   outline: none;
-  padding: 10px;
-  margin-right: 8px;
+  padding: 20px;
   color: white;
   cursor: pointer;
 
@@ -246,18 +243,17 @@ svg {
 }
 
 input {
+  font-size: 18px;
   border: 1px solid #717171;
   border-radius: 5px;
-  padding: 10px;
+  padding: 18px;
 }
 
 .kidForm__fields {
-  display: flex;
-  gap: 20px
-}
-
-.kidForm input[type=submit] {
-  margin-top: 10px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  column-gap: 16px;
+  row-gap: 12px;
 }
 
 .kid-list {

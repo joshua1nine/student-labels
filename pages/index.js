@@ -1,5 +1,5 @@
 import React, { useState, useRef, useEffect } from 'react';
-import Labels from '../components/Labels'
+import Link from 'next/link'
 import { IoMdCloseCircle } from 'react-icons/io'
 import { v4 as uuidv4 } from 'uuid';
 import Resizer from "react-image-file-resizer";
@@ -90,6 +90,7 @@ export default function Home() {
               placeholder="First Name"
               onChange={handleChange}
               name="firstName"
+              required
             />
             <input
               value={values.lName}
@@ -97,6 +98,7 @@ export default function Home() {
               placeholder="Last Name"
               onChange={handleChange}
               name="lastName"
+              required
             />
             <div className="file-upload">
               <input
@@ -107,12 +109,13 @@ export default function Home() {
                 onChange={handlePhoto}
                 name="photo"
                 ref={fileInput}
+                required
               />
               <button className="btn" type="button" onClick={() => fileInput.current.click()}>Add Photo</button>
-              <span className="file-upload__label">No photo selected</span>
+              <span className="file-upload__label">{fileInput.current?.files.length > 0 ? fileInput.current.files[0].name : 'No photo selected'}</span>
             </div>
+            <input type="submit" value="Add Child" className="btn btn-green" />
           </div>
-          <input type="submit" value="Add Child" className="btn btn-green" />
         </form>
 
         {kids.length <= 0 && <p>Add some kids!</p>}
@@ -126,6 +129,9 @@ export default function Home() {
           )}
         </ul>
         {kids.length > 0 && (
+          // <Link href="/print-labels" prefetch={false}>
+          //   <a className="btn btn-green create-labels">Create Labels</a>
+          // </Link>
           <a href="/print-labels" className="btn btn-green create-labels">Create Labels</a>
         )}
       </section>
