@@ -103,8 +103,7 @@ export default function Home() {
             <div className="file-upload">
               <input
                 className="file-upload__input"
-                accept="image/*,capture=camera"
-                capture="”camera"
+                accept="image/*"
                 type="file"
                 onChange={handlePhoto}
                 name="photo"

@@ -319,3 +319,7 @@ input {
     display: none;
   }
 }
+
+input[type='submit'] {
+  appearance: none;
+}
