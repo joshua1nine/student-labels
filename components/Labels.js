@@ -12,7 +12,7 @@ export default function Labels() {
 		setKids(existingKids ? JSON.parse(existingKids) : []);
 		// setLoading(false);
 		// window.print();
-		window.onafterprint = () => history.back();
+		// window.onafterprint = () => history.back();
 	}, []);
 
 	return (
