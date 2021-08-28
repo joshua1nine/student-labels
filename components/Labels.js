@@ -4,15 +4,11 @@ import { v4 as uuidv4 } from 'uuid';
 
 export default function Labels() {
 	const [kids, setKids] = useState([])
-	// const [loading, setLoading] = useState(true);
 
 	// Side Effects / Lifecycle
 	useEffect(() => {
 		const existingKids = localStorage.getItem('kids');
 		setKids(existingKids ? JSON.parse(existingKids) : []);
-		// setLoading(false);
-		// window.print();
-		// window.onafterprint = () => history.back();
 	}, []);
 
 	return (
