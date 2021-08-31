@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@tailwindcss/forms": "^0.3.3",
     "compressorjs": "^1.0.7",
     "fitty": "^2.3.5",
     "next": "11.1.0",
@@ -22,7 +23,10 @@
     "uuid": "^8.3.2"
   },
   "devDependencies": {
+    "autoprefixer": "^10.3.3",
     "eslint": "7.32.0",
-    "eslint-config-next": "11.1.0"
+    "eslint-config-next": "11.1.0",
+    "postcss": "^8.3.6",
+    "tailwindcss": "^2.2.8"
   }
 }

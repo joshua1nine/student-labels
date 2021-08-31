@@ -1,5 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
 
+/* ./styles/globals.css */
+/* @tailwind base;
+@tailwind components;
+@tailwind utilities; */
+
+
 html,
 body {
   padding: 20px;
@@ -25,6 +31,7 @@ img {
 h1 {
   font-size: 42px;
   margin: 0 0 16px 0;
+  padding: 0 0 6rem 0;
   text-transform: uppercase;
 }
 
@@ -58,15 +65,18 @@ h2 {
   grid-template-rows: 100%;
   align-items: center;
 
-  .name {
-    width: 100%;
-    margin: 0 auto;
-
-    p {
-      margin: 0;
-    }
-  }
 }
+
+.name {
+  width: 100%;
+  margin: 0 auto;
+
+}
+
+.name p {
+  margin: 0;
+}
+
 
 .popsicle {
   width: 360px;
@@ -79,10 +89,11 @@ h2 {
   align-items: center;
   justify-content: center;
 
-  p {
-    text-align: center;
-    margin: 0;
-  }
+}
+
+.popsicle p {
+  text-align: center;
+  margin: 0;
 }
 
 .center-labels_wrap {
@@ -90,6 +101,7 @@ h2 {
   flex-direction: row;
   gap: 36px;
 }
+
 .center-label {
   display: flex;
   flex-direction: column;
@@ -100,23 +112,28 @@ h2 {
   padding: 10px;
   border: dotted rgba(0, 0, 0, 0.281) 1px;
 
-  .fname {
-    width: 86px;
-    padding: 5px 0;
+  
+  
+}
 
-    div > div {
-      display: flex;
-      align-items: center;
-      line-height: 1;
-    }
-  }
-  p {
-    margin: 0;
-    height: 100%;
-    display: flex;
-    align-items: center;
-    font-size: 18px;
-  }
+.fname {
+  width: 86px;
+  padding: 5px 0;
+
+}
+
+.fname div > div {
+  display: flex;
+  align-items: center;
+  line-height: 1;
+}
+
+.center-label p {
+  margin: 0;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  font-size: 18px;
 }
 
 text {
@@ -158,16 +175,15 @@ svg {
   margin: 0;
   padding: 0;
 
-  li {
-    p {
-      font-size: 20px;
-    }
+}
 
-    img {
-      border-radius: 10px;
-      width: 100px; 
-    }
-  }
+.kid-list li p {
+  font-size: 20px;
+}
+
+.kid-list li img {
+  border-radius: 10px;
+  width: 100px; 
 }
 
 .btns {
@@ -237,9 +253,10 @@ svg {
   color: white;
   cursor: pointer;
 
-  &:hover {
-    filter: brightness(0.8);
-  }
+}
+
+.btn:hover {
+  filter: brightness(0.8);
 }
 
 .btn.btn-green {
@@ -279,38 +296,38 @@ input {
   justify-content: center;
   align-items: center;
   transition: all ease-in-out 0.1s;
+}
 
+.kid-card:hover {
+  transform: scale(1.02);
+}
 
-  &:hover {
-    transform: scale(1.02);
-  }
+.kid-card p {
+  margin: 0;
+  text-align: center;
+}
 
-  p {
-    margin: 0;
-    text-align: center;
-  }
+.kid-card .btn-close {
+  position: absolute;
+  top: -12px;
+  right: -10px;
+  background-color: white;
+  border-radius: 50%;
+  cursor: pointer;
+}
 
-  .btn-close {
-    position: absolute;
-    top: -12px;
-    right: -10px;
-    background-color: white;
-    border-radius: 50%;
-    cursor: pointer;
+.kid-card .btn-close:hover {
+  transform: scale(1.1);
+}
 
-    &:hover {
-      transform: scale(1.1);
-      svg {
-        filter: brightness(0.9);
-      }
-    }
+.kid-card .btn-close:hover svg {
+  filter: brightness(0.9);
+}
 
-    svg {
-      display: block;
-      color: #F24E1E;
-      font-size: 30px;
-    }
-  }
+.kid-card .btn-close svg {
+  display: block;
+  color: #F24E1E;
+  font-size: 30px;
 }
 
 .create-labels {
