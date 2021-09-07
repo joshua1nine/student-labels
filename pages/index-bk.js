@@ -79,13 +79,12 @@ export default function Home() {
 
   return (
     <>
-      <section className="container">
-        <h1 className="text-6xl mt-4 mb-8">Student Label Creator</h1>
-        <form className="grid grid-cols-3" onSubmit={handleSubmit}>
-          <p className="col-span-3">Add New Child</p>
-          <div className="col-span-full">
+      <section className="wrap">
+        <h1 className="pb-4">Student Label Creator</h1>
+        <form className="kidForm" onSubmit={handleSubmit}>
+          <p>Add New Child</p>
+          <div className="kidForm__fields">
             <input
-              className="p-4 rounded-lg border-gray-400 mr-2"
               value={values.fName}
               type="text"
               placeholder="First Name"
@@ -94,7 +93,6 @@ export default function Home() {
               required
             />
             <input
-              className="p-4 rounded-lg border-gray-400 mr-2"
               value={values.lName}
               type="text"
               placeholder="Last Name"

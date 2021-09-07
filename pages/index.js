@@ -79,12 +79,13 @@ export default function Home() {
 
   return (
     <>
-      <section className="wrap">
-        <h1 className="pb-4">Student Label Creator</h1>
-        <form className="kidForm" onSubmit={handleSubmit}>
+      <section className="container">
+        <h1 className="text-6xl mt-4 mb-8">Student Label Creator</h1>
+        <form onSubmit={handleSubmit}>
           <p>Add New Child</p>
-          <div className="kidForm__fields">
+          <div className="mb-6">
             <input
+              className="p-4 rounded-lg border-gray-400 mr-2"
               value={values.fName}
               type="text"
               placeholder="First Name"
@@ -93,6 +94,7 @@ export default function Home() {
               required
             />
             <input
+              className="p-4 rounded-lg border-gray-400 mr-2"
               value={values.lName}
               type="text"
               placeholder="Last Name"
@@ -100,9 +102,9 @@ export default function Home() {
               name="lastName"
               required
             />
-            <div className="file-upload">
+            <div className="inline-block">
               <input
-                className="file-upload__input"
+                className="hidden"
                 accept="image/*"
                 type="file"
                 onChange={handlePhoto}
@@ -110,26 +112,26 @@ export default function Home() {
                 ref={fileInput}
                 required
               />
-              <button className="btn" type="button" onClick={() => fileInput.current.click()}>Add Photo</button>
+              <button className="p-4 mr-2 inline-block bg-secondary text-white rounded" type="button" onClick={() => fileInput.current.click()}>Add Photo</button>
               <span className="file-upload__label">{fileInput.current?.files.length > 0 ? fileInput.current.files[0].name : 'No photo selected'}</span>
             </div>
-            <input type="submit" value="Add Child" className="btn btn-green" />
+            <input type="submit" value="Add Child" className="p-5 mt-4 text-white bg-primary rounded block w-full cursor-pointer" />
           </div>
         </form>
 
         {kids.length <= 0 && <p>Add some kids!</p>}
-        <ul className="kid-list">
+        <ul className="kid-grid">
           {kids.map(kid => (
-            <li key={kid.id} className="kid-card">
-              <img src={kid.photo} />
-              <p>{kid.firstName}<br />{kid.lastName}</p>
-              <span className="btn-close" onClick={() => removeKid(kid.id)}><IoMdCloseCircle /></span>
+            <li key={kid.id} className="relative p-3 border-2 rounded-lg flex flex-col items-center justify-center">
+              <img src={kid.photo} className="rounded-lg w-24" />
+              <p className="text-center text-xl">{kid.firstName}<br />{kid.lastName}</p>
+              <span className="absolute -top-3 -right-3 text-red-600 text-3xl bg-white p-1 hover:scale-110 ease-in-out transition-all cursor-pointer" onClick={() => removeKid(kid.id)}><IoMdCloseCircle /></span>
             </li>)
           )}
         </ul>
         {kids.length > 0 && (
           <Link href="/print-labels">
-            <a className="btn btn-green create-labels">Create Labels</a>
+            <a className="p-5 mt-4 text-center text-white bg-primary rounded block w-full cursor-pointer">Create Labels</a>
           </Link>
         )}
       </section>
